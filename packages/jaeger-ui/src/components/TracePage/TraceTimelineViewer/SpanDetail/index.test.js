@@ -27,6 +27,7 @@ import CopyIcon from '../../../common/CopyIcon';
 import LabeledList from '../../../common/LabeledList';
 import traceGenerator from '../../../../demo/trace-generators';
 import transformTraceData from '../../../../model/transform-trace-data';
+import PWAccordianKeyValues from '../../../Integration/pitwall/PWAccordianKeyValues';
 
 describe('<SpanDetail>', () => {
   let wrapper;
@@ -142,7 +143,7 @@ describe('<SpanDetail>', () => {
 
   it('renders the process tags', () => {
     const target = (
-      <AccordianKeyValues data={span.process.tags} label="Process" isOpen={detailState.isProcessOpen} />
+      <PWAccordianKeyValues data={span.process.tags} label="Process" isOpen={detailState.isProcessOpen} />
     );
     expect(wrapper.containsMatchingElement(target)).toBe(true);
     wrapper.find({ data: span.process.tags }).simulate('toggle');

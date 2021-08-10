@@ -29,6 +29,8 @@ import { KeyValuePair, Link, Log, Span } from '../../../../types/trace';
 
 import './index.css';
 
+import PWAccordianKeyValues from '../../../Integration/pitwall/PWAccordianKeyValues';
+
 type SpanDetailProps = {
   detailState: DetailState;
   linksGetter: ((links: KeyValuePair[], index: number) => Link[]) | TNil;
@@ -109,13 +111,15 @@ export default function SpanDetail(props: SpanDetailProps) {
             onToggle={() => tagsToggle(spanID)}
           />
           {process.tags && (
-            <AccordianKeyValues
+            <PWAccordianKeyValues
               className="ub-mb1"
               data={process.tags}
               label="Process"
               linksGetter={linksGetter}
               isOpen={isProcessOpen}
               onToggle={() => processToggle(spanID)}
+              traceStartTime={traceStartTime}
+              traceID={span.traceID}
             />
           )}
         </div>

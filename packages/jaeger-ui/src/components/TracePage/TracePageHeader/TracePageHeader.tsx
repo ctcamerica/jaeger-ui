@@ -39,6 +39,8 @@ import { getTraceLinks } from '../../../model/link-patterns';
 import './TracePageHeader.css';
 import ExternalLinks from '../../common/ExternalLinks';
 
+import CoralogixLinkTraceId from '../../Integration/pitwall/CoralogixLinkTraceID';
+
 type TracePageHeaderEmbedProps = {
   canCollapse: boolean;
   clearSearch: () => void;
@@ -152,6 +154,7 @@ export function TracePageHeaderFn(props: TracePageHeaderEmbedProps & { forwarded
     <h1 className={`TracePageHeader--title ${canCollapse ? 'is-collapsible' : ''}`}>
       <TraceName traceName={getTraceName(trace.spans)} />{' '}
       <small className="u-tx-muted">{trace.traceID.slice(0, 7)}</small>
+      <CoralogixLinkTraceId traceID={trace.traceID} traceStartTime={trace.startTime} />
     </h1>
   );
 
