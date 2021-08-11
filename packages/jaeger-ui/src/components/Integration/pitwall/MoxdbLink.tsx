@@ -50,7 +50,7 @@ export default class MoxdbLink extends React.PureComponent<PropsType, StateType>
   render() {
     return (
       <button type="button" onClick={e => this.handleClick(e)}>
-        <img src={require('./images/moxdb-logo.png')} width="10%" height="auto" alt="Jump to Moxdb" />
+        <img src={require('./images/moxdb-logo.png')} width="20%" height="auto" alt="Jump to Moxdb" />
       </button>
     );
   }
