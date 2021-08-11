@@ -66,7 +66,7 @@ export default class GrafanaLink extends React.PureComponent<PropsType, StateTyp
   render() {
     return (
       <button type="button" onClick={e => this.handleClick(e)}>
-        <img src={require('./images/grafana-logo.png')} width="10%" height="auto" alt="Jump to Grafana" />
+        <img src={require('./images/grafana-logo.png')} width="5%" height="auto" alt="Jump to Grafana" />
       </button>
     );
   }
