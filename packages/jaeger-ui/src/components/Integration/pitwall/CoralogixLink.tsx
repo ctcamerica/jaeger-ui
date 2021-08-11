@@ -64,7 +64,7 @@ export default class CoralogixLink extends React.PureComponent<PropsType, StateT
   render() {
     return (
       <button type="button" onClick={e => this.handleClick(e)}>
-        <img src={require('./images/coralogix-logo.png')} width="10%" height="auto" alt="Jump to Coralogix" />
+        <img src={require('./images/coralogix-logo.png')} width="20%" height="auto" alt="Jump to Coralogix" />
       </button>
     );
   }
